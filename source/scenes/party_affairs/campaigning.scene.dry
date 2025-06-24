@@ -26,7 +26,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 2 if unemployed >= 15; workers_spd -= 2 if unemployed >= 25; workers_spd += 6*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
+We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?][? if in_left_front = 1 or if in_popular_front = 1 : continuing to campaign among the workers may not be the best strategy, as our coalition partners (the KPD) has much of their support base among the workers, meaning that we may not be able to form a coalition with them when next elections happen ?]
 
 @new_middle
 subtitle: -1 resources
@@ -34,7 +34,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: new_middle_spd += 6*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
 
-We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?][? if in_weimar_coalition or if in_popular_front or if in_grand_coalition or if in_unity_government: campaigning among the new middle class may not be the best idea, as it would take votes away from the DDP, meaning we may not be able to form a coalition next time ?]
 
 @old_middle
 subtitle: -1 resources
@@ -67,4 +67,4 @@ unavailable-subtitle: Not enough resources.
 view-if: peoples_party == 1
 on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
 
-We have increased our campaigning among Catholics.
+We have increased our campaigning among Catholics. [?
